@@ -59,6 +59,9 @@ previousDaySuffix = "_04062020"
 landingFileDF = spark.read.schema(landingFileSchema).option("delimiter", "|").format("csv")\
         .load(inputLocation + "Sales_Landing\SalesDump" + currentDaySuffix)
 
+landingFileDF.show()
+print("Helo")
+
 landingFileDF.createOrReplaceTempView("landingFileDF")
 
 # reading previous Hold data
